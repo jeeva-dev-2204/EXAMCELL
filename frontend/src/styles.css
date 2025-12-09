@@ -1,0 +1,257 @@
+/* --- General Page Structure --- */
+body {
+  font-family:'Times New Roman', Times, serif;
+  margin: 0;
+  background-color: #f4f7f6;
+  color: #333;
+  transition: background-color 0.5s ease;
+}
+
+/* --- Header Bar --- */
+.header-bar {
+  background-color: #626e74;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.6s ease forwards;
+}
+
+.header-bar h1 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: #101214;
+  padding: 0 30px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links li {
+  text-align: center;
+}
+
+.nav-item {
+  display: block;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #66CCFF;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #66CCFF;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 60%;
+}
+
+.nav-item.active {
+  color: #66CCFF;
+  background-color: #004488;
+}
+
+/* --- Timestamp --- */
+.nav-timestamp {
+  background-color: #002244;
+  color: white;
+  padding: 14px 16px;
+  font-size: 0.9em;
+  transition: opacity 0.5s ease;
+}
+
+/* --- Content --- */
+.container {
+  padding: 30px;
+}
+
+.section-title {
+  color: #004494;
+  border-bottom: 2px solid #f44336;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  animation: fadeIn 0.8s ease;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInCard 0.6s ease forwards;
+}
+
+/* --- Dropdowns --- */
+.dropdown-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.dropdown-group select,
+.dropdown-group input[type="date"] {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdown-group select:focus,
+.dropdown-group input[type="date"]:focus {
+  border-color: #004494;
+  box-shadow: 0 0 5px rgba(0, 68, 148, 0.5);
+}
+
+/* --- Buttons --- */
+.btn, .payment-gateway-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn {
+  background-color: #004494;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.payment-gateway-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.payment-gateway-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* --- Messages --- */
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  transition: opacity 0.5s ease;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  transition: opacity 0.5s ease;
+}
+
+/* --- Tables --- */
+.table-container {
+  overflow-x: auto;
+  margin-top: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+  animation: fadeInCard 0.6s ease forwards;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.data-table th, .data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  word-wrap: break-word;
+  transition: background-color 0.3s ease;
+}
+
+.data-table thead th {
+  background-color: #004494;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.data-table tbody tr:hover {
+  background-color: #e6f7ff;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
